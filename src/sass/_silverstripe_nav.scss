@@ -1,0 +1,16 @@
+//
+// SilverStripe Nav
+// ============================================================================
+
+.navbar-default {
+    .navbar-nav {
+        .current {
+            a,
+            a:hover,
+            a:focus {
+                color: $navbar-default-link-active-color;
+                background-color: $navbar-default-link-active-bg;
+            }
+        }
+    }
+}

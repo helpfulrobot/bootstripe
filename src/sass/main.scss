@@ -1,0 +1,31 @@
+// ============================================================================
+// Main Stylesheet
+// ============================================================================
+
+
+
+// Variables
+//
+// Be sure to override any default Bootstrap variables here
+// ----------------------------------------------------------------------------
+
+
+// Imports
+// ----------------------------------------------------------------------------
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/bootstrap';
+@import 'silverstripe_nav';
+@import 'silverstripe_forms';
+@import 'footer';
+@import 'search';
+
+
+
+// Browse Happy
+// ----------------------------------------------------------------------------
+
+.browsehappy {
+	@extend .alert;
+	@extend .alert-warning;
+	text-align: center;
+}
