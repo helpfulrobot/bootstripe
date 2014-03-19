@@ -69,7 +69,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     cssDir: '.tmp/css',
-                    fontsDir: 'css/fonts'
+                    fontsDir: 'fonts'
                 }
             }
         },
@@ -94,8 +94,7 @@ module.exports = function (grunt) {
                         cwd: 'src/images/',
                         src: ['**'],
                         dest: 'images'
-                    },
-                    {
+                    }, {
                         expand: true,
                         cwd: 'src/javascript/',
                         src: ['**'],
@@ -110,8 +109,7 @@ module.exports = function (grunt) {
                         cwd: 'src/templates/',
                         src: ['**'],
                         dest: 'templates'
-                    },
-                    {
+                    }, {
                         expand: true,
                         dot: true,
                         cwd: 'src',
@@ -119,12 +117,11 @@ module.exports = function (grunt) {
                         src: [
                             '*.{ico,png,txt}'
                         ]
-                    },
-                    {
+                    }, {
                         expand: true,
                         cwd: 'bower_components/font-awesome/fonts',
                         src: ['*.*'],
-                        dest: 'css/fonts'
+                        dest: 'fonts'
                     }
                 ]
             }
@@ -168,8 +165,7 @@ module.exports = function (grunt) {
                             match: '/{themedir}/g',
                             replacement: '$ThemeDir/',
                             expression: true
-                        },
-                        {
+                        }, {
                             match: '/"bower_components//g',
                             replacement: '"$ThemeDir/bower_components/',
                             expression: true
@@ -209,8 +205,7 @@ module.exports = function (grunt) {
                             match: '/href="css//g',
                             replacement: 'href="../css/',
                             expression: true
-                        },
-                        {
+                        }, {
                             match: '/src="javascript//g',
                             replacement: 'src="../javascript/',
                             expression: true
@@ -232,8 +227,7 @@ module.exports = function (grunt) {
                             match: '/href="../css//g',
                             replacement: 'href="$ThemeDir/css/',
                             expression: true
-                        },
-                        {
+                        }, {
                             match: '/src="../javascript//g',
                             replacement: 'src="$ThemeDir/javascript/',
                             expression: true
