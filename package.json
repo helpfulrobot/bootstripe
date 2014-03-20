@@ -1,15 +1,15 @@
 {
   "name": "BootStripe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "descrption": "A SilverStripe theme built with Grunt and Bower, incorporating Bootstrap and Font Awesome",
   "keywords": [
-    "SilverStripe",
+    "silverstripe",
     "theme",
-    "Bootstrap",
-    "Grunt",
-    "Bower",
-    "Sass",
-    "Font Awesome"
+    "bootstrap",
+    "grunt",
+    "bower",
+    "sass",
+    "font awesome"
   ],
   "author": {
     "name": "Xplore",
