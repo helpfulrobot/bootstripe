@@ -13,8 +13,6 @@
     <!-- build:css({.,.tmp}) css/main.css -->
     <link rel="stylesheet" href="{themedir}css/main.css">
     <link rel="stylesheet" href="{themedir}bower_components/font-awesome/css/font-awesome.css">
-    <!-- bower:css -->
-    <!-- endbower -->
     <!-- endbuild -->
 </head>
 <body>
@@ -31,9 +29,19 @@
 </div>
 
 <!-- build:js({.,src}) javascript/vendor.js -->
-<!-- bower:js -->
-<!-- endbower -->
+<script src="{themedir}bower_components/jquery/dist/jquery.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
 <script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
 <!-- endbuild -->
 </body>
 </html>

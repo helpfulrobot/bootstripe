@@ -46,14 +46,6 @@ module.exports = function (grunt) {
             ]
         },
 
-        // Install Bower dependencies
-        // ------------------------------------------------
-        bowerInstall: {
-            app: {
-                src: ['templates/**/*.ss']
-            }
-        },
-
         // Compass
         // ------------------------------------------------
         compass: {
@@ -117,11 +109,6 @@ module.exports = function (grunt) {
                         src: [
                             '*.{ico,png,txt}'
                         ]
-                    }, {
-                        expand: true,
-                        cwd: 'bower_components/font-awesome/fonts',
-                        src: ['*.*'],
-                        dest: 'fonts'
                     }
                 ]
             }
@@ -164,10 +151,6 @@ module.exports = function (grunt) {
                         {
                             match: '/{themedir}/g',
                             replacement: '$ThemeDir/',
-                            expression: true
-                        }, {
-                            match: '/"bower_components//g',
-                            replacement: '"$ThemeDir/bower_components/',
                             expression: true
                         }
                     ]
@@ -361,7 +344,6 @@ module.exports = function (grunt) {
     grunt.registerTask('serve', [
         'clean',
         'concurrent:serve',
-        'bowerInstall',
         'replace:serve',
         'watch'
     ]);
@@ -375,7 +357,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean',
         'concurrent:dist',
-        'bowerInstall',
         'replace:dist',
         'useminPrepare',
         'autoprefixer',
