@@ -91,6 +91,12 @@ module.exports = function (grunt) {
                         cwd: 'src/javascript/',
                         src: ['**'],
                         dest: 'javascript'
+                    }, {
+                        expand: true,
+                        dot: true,
+                        cwd: 'src',
+                        dest: '',
+                        src: ['*.{ico,png,txt}']
                     }
                 ]
             },
@@ -106,9 +112,7 @@ module.exports = function (grunt) {
                         dot: true,
                         cwd: 'src',
                         dest: '',
-                        src: [
-                            '*.{ico,png,txt}'
-                        ]
+                        src: ['*.{ico,png,txt}']
                     }, {
                         expand: true,
                         cwd: 'bower_components/font-awesome/fonts',
