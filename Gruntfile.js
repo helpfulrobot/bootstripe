@@ -118,11 +118,14 @@ module.exports = function (grunt) {
         // ------------------------------------------------
         imagemin: {
             dist: {
+                options: {
+                    cache: false
+                },
                 files: [
                     {
                         expand: true,
                         cwd: 'src/images',
-                        src: '{,*/}*.{gif,jpeg,jpg,png}',
+                        src: '**/*.{gif,jpeg,jpg,png}',
                         dest: 'images'
                     }
                 ]
@@ -189,6 +192,10 @@ module.exports = function (grunt) {
                             replacement: 'href="../css/',
                             expression: true
                         }, {
+                            match: '/src="images//g',
+                            replacement: 'src="../images/',
+                            expression: true
+                        }, {
                             match: '/src="javascript//g',
                             replacement: 'src="../javascript/',
                             expression: true
@@ -209,6 +216,10 @@ module.exports = function (grunt) {
                         {
                             match: '/href="../css//g',
                             replacement: 'href="$ThemeDir/css/',
+                            expression: true
+                        }, {
+                            match: '/src="../images//g',
+                            replacement: 'src="$ThemeDir/images/',
                             expression: true
                         }, {
                             match: '/src="../javascript//g',
@@ -263,7 +274,7 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         'css/**/*.css',
-                        'images/**/*',
+                        'images/**/*.{gif,jpeg,jpg,png,svg}',
                         'javascript/**/*.js'
                     ]
                 }
@@ -278,6 +289,7 @@ module.exports = function (grunt) {
             options: {
                 assetsDirs: [
                     'css',
+                    'images',
                     'javascript'
                 ]
             }
@@ -290,7 +302,7 @@ module.exports = function (grunt) {
                 options: {
                     removeComments: true,
                     removeCommentsFromCDATA: true,
-                    collapseWhitespace: false,
+                    collapseWhitespace: true,
                     collapseBooleanAttributes: true,
                     removeAttributeQuotes: true,
                     removeRedundantAttributes: true,
