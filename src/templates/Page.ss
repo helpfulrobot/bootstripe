@@ -11,8 +11,8 @@
     <link rel="icon" href="$ThemeDir/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="$ThemeDir/apple-touch-icon-precomposed.png">
 
-    <!-- build:css({.,.tmp}) css/main.css -->
-    <link rel="stylesheet" href="{themedir}css/main.css">
+    <!-- build:css({.,.tmp}) css/layout.css -->
+    <link rel="stylesheet" href="{themedir}css/layout.css">
     <link rel="stylesheet" href="{themedir}bower_components/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
 </head>

@@ -3,6 +3,7 @@
 .tmp/
 /bower_components/
 /css/
+/fonts/
 /images/
 /javascript/
 /node_modules/

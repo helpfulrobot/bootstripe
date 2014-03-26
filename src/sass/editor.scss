@@ -1,0 +1,49 @@
+// ============================================================================
+// Editor Stylesheet
+//
+// Defines how styles appear in the CMS
+// ============================================================================
+
+
+
+// Imports
+// ----------------------------------------------------------------------------
+
+// Site specific variables
+@import 'variables';
+
+// Bootstrap variables and mixins
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables';
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins';
+
+// Site typography
+@import 'typography';
+
+
+
+// Overrides
+// ----------------------------------------------------------------------------
+
+// TinyMCE body
+body.mceContentBody {
+	background-color: $body-bg;
+	color: $text-color;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+
+	// Import the style definitions here so they don't populate the TinyMCE
+	// style selector
+	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding';
+	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type';
+	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tables';
+	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms';
+	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons';
+
+	td {
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+	}
+}

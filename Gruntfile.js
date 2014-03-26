@@ -24,6 +24,7 @@ module.exports = function (grunt) {
                 '.sass-cache',
                 '.tmp',
                 'css',
+                'fonts',
                 'images',
                 'javascript',
                 'templates'
@@ -60,8 +61,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    cssDir: '.tmp/css',
-                    fontsDir: 'fonts'
+                    cssDir: '.tmp/css'
                 }
             }
         },
@@ -109,6 +109,11 @@ module.exports = function (grunt) {
                         src: [
                             '*.{ico,png,txt}'
                         ]
+                    }, {
+                        expand: true,
+                        cwd: 'bower_components/font-awesome/fonts',
+                        src: '*.*',
+                        dest: 'fonts'
                     }
                 ]
             }
@@ -267,6 +272,16 @@ module.exports = function (grunt) {
             }
         },
 
+        // Minify the editor css
+        cssmin: {
+            dist: {
+                expand: true,
+                cwd: '.tmp/css',
+                src: ['editor.css'],
+                dest: 'css'
+            }
+        },
+
         // Renames files for browser caching purposes
         // ------------------------------------------------
         rev: {
@@ -275,7 +290,8 @@ module.exports = function (grunt) {
                     src: [
                         'css/**/*.css',
                         'images/**/*.{gif,jpeg,jpg,png,svg}',
-                        'javascript/**/*.js'
+                        'javascript/**/*.js',
+                        '!css/editor.css'
                     ]
                 }
             }
@@ -289,6 +305,7 @@ module.exports = function (grunt) {
             options: {
                 assetsDirs: [
                     'css',
+                    'fonts',
                     'images',
                     'javascript'
                 ]

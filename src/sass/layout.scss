@@ -2,22 +2,25 @@
 // Main Stylesheet
 // ============================================================================
 
-
-
-// Variables
-//
-// Be sure to override any default Bootstrap variables here
-// ----------------------------------------------------------------------------
-
-
 // Imports
 // ----------------------------------------------------------------------------
 
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/bootstrap';
+// Site variables
+@import 'variables';
+
+// Custom Bootstrap
+@import 'bootstrap';
+
+// SilverStripe - Bootstrap conversions
 @import 'silverstripe_nav';
 @import 'silverstripe_forms';
+
+// Includes
 @import 'footer';
 @import 'search';
+
+// Layouts
+@import 'homepage';
 
 
 
