@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="$ThemeDir/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="$ThemeDir/apple-touch-icon-precomposed.png">
 
     <!-- build:css({.,.tmp}) css/main.css -->
     <link rel="stylesheet" href="{themedir}css/main.css">
