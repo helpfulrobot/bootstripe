@@ -267,20 +267,16 @@ module.exports = function (grunt) {
     // Apply vendor prefixes to css
     // ------------------------------------------------
     autoprefixer: {
+      options: {
+        browsers: ['last 2 version', 'ie 9']
+      },
       dist: {
-        options: {
-          browsers: ['last 1 version']
-        },
-        dist: {
-          files: [
-            {
-              expand: true,
-              cwd: '.tmp/css',
-              src: '{,*/}*.css',
-              dest: '.tmp/css'
-            }
-          ]
-        }
+        files: [{
+          expand: true,
+          cwd: '.tmp/css',
+          src: '**/*.css',
+          dest: '.tmp/css'
+        }]
       }
     },
 
