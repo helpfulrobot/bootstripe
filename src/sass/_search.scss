@@ -1,4 +1,4 @@
-//
+// ============================================================================
 // Search
 // ============================================================================
 
@@ -8,8 +8,8 @@
 // ----------------------------------------------------------------------------
 
 #Nav_SearchForm_action_results {
-	@media only screen and (max-width: $screen-xs-max) {
-		display: block;
-		width: 100%;
-	}
+  @media only screen and (max-width: $screen-xs-max) {
+    display: block;
+    width: 100%;
+  }
 }

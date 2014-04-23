@@ -1,5 +1,5 @@
 <div class="page-header">
-	<h1>$Title</h1>
+  <h1>$Title</h1>
 </div>
 
 $Breadcrumbs

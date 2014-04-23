@@ -1,3 +1,3 @@
 <header class="header">
-    <% include Nav %>
+  <% include Nav %>
 </header>

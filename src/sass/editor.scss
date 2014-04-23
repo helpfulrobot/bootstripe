@@ -26,24 +26,24 @@
 
 // TinyMCE body
 body.mceContentBody {
-	background-color: $body-bg;
-	color: $text-color;
-	font-family: $font-family-base;
-	font-size: $font-size-base;
-	line-height: $line-height-base;
+  background-color: $body-bg;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 
-	// Import the style definitions here so they don't populate the TinyMCE
-	// style selector
-	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding';
-	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type';
-	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tables';
-	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms';
-	@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons';
+  // Import the style definitions here so they don't populate the TinyMCE
+  // style selector
+  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding';
+  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type';
+  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tables';
+  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms';
+  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons';
 
-	td {
-		color: inherit;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-	}
+  td {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
