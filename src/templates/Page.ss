@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-  <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if
-    %>&nbsp;|&nbsp;$SiteConfig.Title</title>
+  <title><% if $MetaTitle %>$MetaTitle<% else %>$Title<% end_if %>&nbsp;|&nbsp;$SiteConfig.Title</title>
   <% base_tag %>
   $MetaTags(false)
   <meta charset="utf-8">
