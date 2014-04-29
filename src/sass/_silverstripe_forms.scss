@@ -34,6 +34,7 @@ form label.right {
 
 form .field {
   @extend .form-group;
+  @extend .clearfix;
 }
 
 
@@ -61,6 +62,11 @@ form .field {
       }
     }
   }
+
+  .readonly {
+    @extend .form-control;
+    @extend .form-control[disabled];
+  }
 }
 
 // Checkbox
@@ -68,6 +74,8 @@ form .field {
 
 form .field.checkbox {
   position: relative;
+
+  margin-top: 0;
 
   label.right {
     color: $text-color;
@@ -141,11 +149,30 @@ form .field.date {
 // Validation Messages
 // ----------------------------------------------------------------------------
 
-form label.required {
-  @extend .help-block;
+form {
+  p.message {
+    @extend .alert;
 
-  color: $state-danger-text;
-  font-weight: normal;
+    &.bad {
+      @extend .alert-danger;
+    }
+
+    &.good {
+      @extend .alert-success;
+    }
+
+    &.warning {
+      @extend .alert-warning;
+    }
+  }
+
+  label.required,
+  .message.validation {
+    @extend .help-block;
+
+    color: $state-danger-text;
+    font-weight: normal;
+  }
 }
 
 // Actions
