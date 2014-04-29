@@ -9,14 +9,6 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
-    // Configuration globals
-    // ------------------------------------------------
-    config: {
-      // Must match the directory name of the theme
-      themeName: 'bootstripe',
-      themeDir: '/themes/<%= config.themeName %>'
-    },
-
     // Clean up generated files
     // ------------------------------------------------
     clean: {
