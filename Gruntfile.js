@@ -13,6 +13,7 @@ module.exports = function (grunt) {
     // ------------------------------------------------
     clean: {
       main: [
+        '*.{ico,png}',
         '.sass-cache',
         '.tmp',
         'css',
@@ -29,11 +30,13 @@ module.exports = function (grunt) {
       serve: [
         'compass:serve',
         'copy:serve',
-        'copy:templates'
+        'copy:templates',
+        'favicons'
       ],
       dist: [
         'compass:dist',
         'copy:dist',
+        'favicons',
         'imagemin:dist',
         'svgmin:dist'
       ]
@@ -90,7 +93,7 @@ module.exports = function (grunt) {
             dot: true,
             cwd: 'src',
             dest: '',
-            src: ['*.{ico,png,txt}']
+            src: ['*.{txt}']
           }
         ]
       },
@@ -107,7 +110,7 @@ module.exports = function (grunt) {
             dot: true,
             cwd: 'src',
             dest: '',
-            src: ['*.{ico,png,txt}']
+            src: ['*.{txt}']
           },
           {
             expand: true,
@@ -116,6 +119,19 @@ module.exports = function (grunt) {
             dest: 'fonts'
           }
         ]
+      }
+    },
+
+    // Favicons
+    // ------------------------------------------------
+    favicons: {
+      options: {
+        appleTouchBackgroundColor: '#231f20',
+        tileColor: '#231f20'
+      },
+      icons: {
+        src: 'src/favicon.png',
+        dest: '.'
       }
     },
 
