@@ -75,9 +75,21 @@ form .field {
 form .field.checkbox {
   position: relative;
 
-  margin-top: 0;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  min-height: 0;
+
+  input[type="checkbox"] {
+    min-height: 0;
+  }
 
   label.right {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
     color: $text-color;
   }
 
