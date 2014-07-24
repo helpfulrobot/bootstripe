@@ -50,6 +50,7 @@
 
 <!-- build:js({.,src}) javascript/vendor.js -->
 <script src="{themedir}bower_components/jquery/dist/jquery.js"></script>
+<script src="{themedir}bower_components/picturefill/dist/picturefill.js"></script>
 <script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
 <script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
 <script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
