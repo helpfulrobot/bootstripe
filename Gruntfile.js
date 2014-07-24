@@ -7,6 +7,12 @@ module.exports = function (grunt) {
   // load all grunt tasks
   require('load-grunt-tasks')(grunt);
 
+  // Configurable variables
+  var config = {
+    faviconBackgroundColor: '#ffffff',
+    responsiveImageQuality: 60
+  };
+
   grunt.initConfig({
 
     // Clean up generated files
@@ -31,15 +37,69 @@ module.exports = function (grunt) {
         'compass:serve',
         'copy:serve',
         'copy:templates',
-        'favicons'
+        'favicons',
+        'responsive_images'
       ],
       dist: [
         'compass:dist',
         'copy:dist',
         'favicons',
         'imagemin:dist',
+        'responsive_images',
         'svgmin:dist'
       ]
+    },
+
+    // Responsive Images
+    // ------------------------------------------------
+    responsive_images: {
+      options: {
+        sizes: [{
+          name: 'xs',
+          width: 768,
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'xs',
+          width: 768 * 2,
+          suffix: '@2x',
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'sm',
+          width: 992,
+          quality: config.responsiveImageQuality
+        },{
+          name: 'sm',
+          width: 992 * 2,
+          suffix: '@2x',
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'md',
+          width: 1200,
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'md',
+          width: 1200 * 2,
+          suffix: '@2x',
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'lg',
+          width: 2048,
+          quality: config.responsiveImageQuality
+        }, {
+          name: 'lg',
+          width: 2048 * 2,
+          suffix: '@2x',
+          quality: config.responsiveImageQuality
+        }]
+      },
+      carousel: {
+        files: [{
+          expand: true,
+          src: ['*.{jpg,gif,png}'],
+          cwd: 'src/images/rwd/',
+          dest: 'images/rwd'
+        }]
+      }
     },
 
     // Compass
@@ -126,8 +186,8 @@ module.exports = function (grunt) {
     // ------------------------------------------------
     favicons: {
       options: {
-        appleTouchBackgroundColor: '#231f20',
-        tileColor: '#231f20'
+        appleTouchBackgroundColor: config.faviconBackgroundColor,
+        tileColor: config.faviconBackgroundColor
       },
       icons: {
         src: 'src/favicon.png',

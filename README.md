@@ -1,8 +1,10 @@
-# BootStripe
+BootStripe
+==========
 
 A [SilverStripe](http://www.silverstripe.org) theme built with [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/), incorporating [Bootstrap](http://getbootstrap.com/) and [Font Awesome](http://fontawesome.io/).
 
-## What we're cooking with
+What we're cooking with
+-----------------------
 
 The Sass version of Bootstrap is used due its ability to override the default variables without manually managing the Bootstrap source files.
 
@@ -18,7 +20,8 @@ And because your SEO expert gets all twitchy if your site doesn't have a contact
 
 If you're enabled full-text search you should see a nice search box in the header. This does expect a top level page called 'search', but it makes sense to have a consistent URL right?
 
-## Installation
+Installation
+------------
 
 - Since you're not going to use theme as stock (right?), download the latest release from https://github.com/XploreNet/bootstripe.
 - Extract it to a theme directory of your choice. The default expected theme directory is `bootstripe`.
@@ -26,11 +29,13 @@ If you're enabled full-text search you should see a nice search box in the heade
 - Run `grunt build` to generate the real theme files.
 - Update your SilverStripe configuration to use your fancy pants new theme.
 
-## Configuration
+Configuration
+-------------
 
 If you rename the theme directory to something other than __bootstripe__, update `Gruntfile.js` and set `config.themeName` to the new directory name.
 
-## How to use
+How to use
+----------
 
 All the files you should be working on are in the `src` sub-directory. These are parsed via Grunt to generate the real files SilverStripe will display.
 
@@ -67,6 +72,20 @@ Replace `src/favicon.png` with a favicon of your choice and it will be automatic
 It's recommended to use a 512 x 512 pixel as your source for your favicon, with a transparent background.
 Some versions of the favicon will apply a background colour which is defined in `Gruntfile.js`.
 
-## License
+### Responsive Images
+
+A Sass mixin is provided to apply a background image appropriate for the various breakpoints to any css class.
+
+1. Save your image into `src/images/rwd`, preferably at 4,096px wide or greater.
+2. In your css class definition apply the mixin `@include rwd-image(image_name);` without the extension (generated images are all jpg).
+3. Apply your own background sizing to your class, e.g. `background-size: cover;`.
+
+During Grunt compilation a new version of the image will be generated for each breakpoint, and for high-DPI devices.
+The mixin will apply the generated images with the `background-image` property as appropriate.
+
+The generated images are designed to be displayed full-width at the given breakpoint, so this system is ideal for banners or carousels.
+
+License
+-------
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)

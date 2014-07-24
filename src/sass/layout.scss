@@ -13,6 +13,9 @@
 // Custom Bootstrap
 @import 'bootstrap';
 
+// Custom mixins
+@import 'mixins/rwd-images';
+
 // SilverStripe - Bootstrap conversions
 @import 'silverstripe_nav';
 @import 'silverstripe_forms';
