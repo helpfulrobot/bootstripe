@@ -29,9 +29,11 @@
   <link rel="stylesheet" href="{themedir}css/layout.css">
   <link rel="stylesheet" href="{themedir}bower_components/font-awesome/css/font-awesome.css">
   <!-- endbuild -->
+
+  <% include GA %>
 </head>
 <body>
-<!--[if lt IE 9]>
+<!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
   <a href="http://browsehappy.com/">upgrade your browser</a>
   to improve your experience.
