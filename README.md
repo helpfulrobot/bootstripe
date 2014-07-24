@@ -49,6 +49,16 @@ Then once you're all done and ready to ship, `grunt build` will create the ultim
 Tools
 -----
 
+### Custom Fonts
+
+If you need to use a custom, say from [Google Fonts](https://www.google.com/fonts), there are two places you need to include it.
+
+First is as a `<link>` in the head of `src/templates/Page.ss`.
+
+The second is if you want the font to appear in the CMS while editing pages, in which case include as a css `@import` at the top of `src/sass/editor.scss`.
+
+You can then override the Bootstrap font variables to apply your font as required.
+
 ### Favicons
 
 Replace `src/favicon.png` with a favicon of your choice and it will be automatically converted to the appropriate formats.

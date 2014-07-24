@@ -46,4 +46,9 @@ body.mceContentBody {
     font-size: inherit;
     font-weight: inherit;
   }
+
+  .button {
+    @extend .btn;
+    @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  }
 }
