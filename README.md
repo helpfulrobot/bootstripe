@@ -46,6 +46,17 @@ becomes
 
 Then once you're all done and ready to ship, `grunt build` will create the ultimate optimised version of your theme.
 
+Tools
+-----
+
+### Favicons
+
+Replace `src/favicon.png` with a favicon of your choice and it will be automatically converted to the appropriate formats.
+`src/templates/Page.ss` already has the correct code to include all the generated versions.
+
+It's recommended to use a 512 x 512 pixel as your source for your favicon, with a transparent background.
+Some versions of the favicon will apply a background colour which is defined in `Gruntfile.js`.
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
