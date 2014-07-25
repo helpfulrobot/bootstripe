@@ -23,6 +23,8 @@
 // Styles which will appear in the Styles dropdown in the CMS
 // ----------------------------------------------------------------------------
 
-.button {
+.btn-default {
   display: inline-block;
+
+  @extend .btn;
 }

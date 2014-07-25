@@ -7,33 +7,32 @@
 // Imports
 // ----------------------------------------------------------------------------
 
-// Site variables
+// Site variables and mixins
 @import 'variables';
+@import 'mixins';
 
 // Custom Bootstrap
 @import 'bootstrap';
-
-// Custom mixins
-@import 'mixins/rwd-images';
 
 // SilverStripe - Bootstrap conversions
 @import 'silverstripe_nav';
 @import 'silverstripe_forms';
 
+// Core CSS
+@import 'scaffolding';
+@import 'typography';
+@import 'forms';
+@import 'buttons';
+
+// Components
+@import 'browse-happy';
+@import 'jumbotron';
+@import 'navbar';
+
 // Includes
+@import 'header';
 @import 'footer';
 @import 'search';
 
 // Layouts
 @import 'homepage';
-
-
-
-// Browse Happy
-// ----------------------------------------------------------------------------
-
-.browsehappy {
-  @extend .alert;
-  @extend .alert-warning;
-  text-align: center;
-}
