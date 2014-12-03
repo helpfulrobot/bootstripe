@@ -1,10 +1,10 @@
 {
   "name": "Xplore-SilverStripe-Bootstrap",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "dependencies": {
-    "bootstrap-sass-official": "~3.1.1",
-    "jquery": "~1.11.0",
-    "font-awesome": "~4.0.3",
-    "picturefill": "~2.1.0"
+    "bootstrap-sass-official": "~3.3.1",
+    "jquery": "~1.11.1",
+    "font-awesome": "~4.2.0",
+    "picturefill": "~2.2.0"
   }
 }

@@ -13,8 +13,8 @@
 @import 'variables';
 
 // Bootstrap variables and mixins
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables';
-@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/mixins';
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap/variables';
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap/mixins';
 
 // Site typography
 @import 'typography';
@@ -34,11 +34,12 @@ body.mceContentBody {
 
   // Import the style definitions here so they don't populate the TinyMCE
   // style selector
-  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/scaffolding';
-  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/type';
-  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/tables';
-  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/forms';
-  @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/buttons';
+  @import 'bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding';
+  @import 'bootstrap-sass-official/assets/stylesheets/bootstrap/type';
+  @import 'bootstrap-sass-official/assets/stylesheets/bootstrap/tables';
+  @import 'bootstrap-sass-official/assets/stylesheets/bootstrap/forms';
+  @import 'bootstrap-sass-official/assets/stylesheets/bootstrap/buttons';
+  @import 'silverstripe_images';
 
   td {
     color: inherit;

@@ -12,13 +12,31 @@
 
   <div id="navPrimary" class="navbar-collapse collapse">
     <% if $Menu(1) %>
-    <ul class="nav navbar-nav">
-      <% loop $Menu(1) %>
-      <li class="$LinkingMode">
-        <a href="$Link" title="$Title.XML">$MenuTitle.XML</a>
-      </li>
-      <% end_loop %>
-    </ul>
+        <ul class="nav navbar-nav">
+          <% loop $Menu(1) %><li class="$LinkingMode <% if $Children %>dropdown<% end_if %>">
+            <% if $Children %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="$Title.XML">
+                  $MenuTitle.XML <i class="fa fa-chevron-down"></i>
+                </a>
+            <% else %>
+                <a href="$Link" title="$Title.XML">
+                  $MenuTitle.XML
+                </a>
+            <% end_if %>
+            <% if $Children %>
+                <ul class="dropdown-menu" role="menu">
+                  <% if $LinkingMode == 'section' %>
+                      <li class="link"><a href="$Link" title="$Title.XML">$MenuTitle.XML</a></li>
+                  <% else %>
+                      <li class="$LinkingMode"><a href="$Link" title="$Title.XML">$MenuTitle.XML</a></li>
+                  <% end_if %>
+                  <% loop $Children %>
+                      <li class="$LinkingMode"><a href="$Link" title="$Title.XML">$MenuTitle.XML</a></li>
+                  <% end_loop %>
+                </ul>
+            <% end_if %>
+          </li><% end_loop %>
+        </ul>
     <% end_if %>
 
     <% include SiteSearch %>

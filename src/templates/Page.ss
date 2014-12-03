@@ -51,18 +51,18 @@
 <!-- build:js({.,src}) javascript/vendor.js -->
 <script src="{themedir}bower_components/jquery/dist/jquery.js"></script>
 <script src="{themedir}bower_components/picturefill/dist/picturefill.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="{themedir}bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="{themedir}bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
 <!-- endbuild -->
 </body>
 </html>
