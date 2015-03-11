@@ -9,7 +9,6 @@ module.exports = function (grunt) {
 
   // Configurable variables
   var config = {
-    faviconBackgroundColor: '#ffffff',
     responsiveImageQuality: 60
   };
 
@@ -37,13 +36,11 @@ module.exports = function (grunt) {
         'compass:serve',
         'copy:serve',
         'copy:templates',
-        'favicons',
         'responsive_images'
       ],
       dist: [
         'compass:dist',
         'copy:dist',
-        'favicons',
         'imagemin:dist',
         'responsive_images',
         'svgmin:dist'
@@ -179,19 +176,6 @@ module.exports = function (grunt) {
             dest: 'fonts'
           }
         ]
-      }
-    },
-
-    // Favicons
-    // ------------------------------------------------
-    favicons: {
-      options: {
-        appleTouchBackgroundColor: config.faviconBackgroundColor,
-        tileColor: config.faviconBackgroundColor
-      },
-      icons: {
-        src: 'src/favicon.png',
-        dest: '.'
       }
     },
 
@@ -388,31 +372,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Complete the minification of the templates
-    // ------------------------------------------------
-    htmlmin: {
-      dist: {
-        options: {
-          removeComments: true,
-          removeCommentsFromCDATA: true,
-          collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true
-        },
-        files: [
-          {
-            expand: true,
-            cwd: 'templates/',
-            src: '**/*.ss',
-            dest: 'templates/'
-          }
-        ]
-      }
-    },
-
     // Watch for changes
     // ------------------------------------------------
     watch: {
@@ -472,8 +431,7 @@ module.exports = function (grunt) {
     'usemin',
     'replace:preMin',
     'usemin',
-    'replace:postMin',
-    'htmlmin'
+    'replace:postMin'
   ]);
 
   // Default Task

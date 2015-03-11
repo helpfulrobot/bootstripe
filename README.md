@@ -51,6 +51,24 @@ becomes
 
 Then once you're all done and ready to ship, `grunt build` will create the ultimate optimised version of your theme.
 
+### Favicons
+The default template is setup to serve all kinds of favicons but we've left it up to you to provide them:
+
+ - windows-tile-70x70.png
+ - windows-tile-150x150.png
+ - windows-tile-310x310.png
+ - windows-tile-144x144.png
+ - apple-touch-icon-152x152.png
+ - apple-touch-icon-120x120.png
+ - apple-touch-icon-76x76.png
+ - apple-touch-icon-60x60.png
+ - apple-touch-icon-144x144.png
+ - apple-touch-icon-114x114.png
+ - apple-touch-icon-72x72.png
+ - apple-touch-icon.png
+ - favicon.ico
+ - favicon.png
+
 Tools
 -----
 
@@ -64,14 +82,6 @@ The second is if you want the font to appear in the CMS while editing pages, in 
 
 You can then override the Bootstrap font variables to apply your font as required.
 
-### Favicons
-
-Replace `src/favicon.png` with a favicon of your choice and it will be automatically converted to the appropriate formats.
-`src/templates/Page.ss` already has the correct code to include all the generated versions.
-
-It's recommended to use a 512 x 512 pixel as your source for your favicon, with a transparent background.
-Some versions of the favicon will apply a background colour which is defined in `Gruntfile.js`.
-
 ### Responsive Images
 
 A Sass mixin is provided to apply a background image appropriate for the various breakpoints to any css class.
@@ -84,6 +94,25 @@ During Grunt compilation a new version of the image will be generated for each b
 The mixin will apply the generated images with the `background-image` property as appropriate.
 
 The generated images are designed to be displayed full-width at the given breakpoint, so this system is ideal for banners or carousels.
+
+### Non Physical & Non Visible Children Pages
+
+The base `Page` class should have a function `getShowInDropdownIfParent` or a dbfield `ShowInDropdownIfParent` that returns true.
+For any pages that you don't want to show as the first child in the dropdown of the main nav if they have child pages set this to false and you're good to go!
+
+The inverse is Sometimes a page should never show it's children in the nav (I'm lookin at you blog!) and setting the option on all child pages is a pain so instead
+add a function `getHideChildrenFromNavigation` or a dbfield `HideChildrenFromNavigation` that returns false and it's children are outa there.
+
+### Responsive Information
+
+We have a wicked little tool that will output a bunch of information about the screen size, bootstrap container and what not and to activate it you just need to 
+add a function `getShowResponsiveOutput` or a db field `ShowResponsiveOutput` to the SiteConfig and make it return true. When you want it gone set it to false.
+
+### Analytics
+
+Analytics aren't just for google and we know that, So if you add a function `getCustomFooterOutput` or `getCustomHeaderOutput` 
+or a dbfield `CustomerFooterOutput` or `CustomerHeaderOutput` to your SiteConfig and we'll deal with activating it making it nice and easy to have different (or
+ none at all) tracking code per environment.
 
 License
 -------
