@@ -25,9 +25,9 @@
       content: "MD - Between #{$screen-md-min} and #{$screen-md-max}";
     }
 
-    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+    @media (min-width: $screen-lg-min) {
       display: block;
-      content: "LG - Between #{$screen-lg-min} and #{$screen-lg-max}";
+      content: "LG - Greater than #{$screen-lg-min}";
     }
   }
 
@@ -47,7 +47,7 @@
       content: "Container: #{$container-md - $grid-gutter-width}";
     }
 
-    @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+    @media (min-width: $screen-lg-min) {
       display: block;
       content: "Container: #{$container-lg - $grid-gutter-width}";
     }
