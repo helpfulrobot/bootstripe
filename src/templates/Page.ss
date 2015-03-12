@@ -36,7 +36,7 @@
 </head>
 <body>
     <% if $SiteConfig.ShowResponsiveOutput %>
-        <div id="responsive"><div></div></div>
+    <div id="responsive"><div></div></div>
     <% end_if %>
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
@@ -49,9 +49,7 @@
     $Layout
     <% include Footer %>
 
-    <% if $IncludeGoogleMaps %>
-    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
-    <% end_if %>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
 
 <!-- build:js({.,src}) javascript/vendor.js -->
 <script src="{themedir}bower_components/jquery/dist/jquery.js"></script>
