@@ -1,8 +1,8 @@
 $(function () {
-    var $display;
+    var $display = [];
     $(window).resize(function () {
         if (!$display.length) { //try again we may have added it later.
-            var $display = $('#responsive div');
+            $display = $('#responsive div');
         }
         if ($display.length) {
             var vWidth = $(window).width();

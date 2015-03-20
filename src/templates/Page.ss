@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{themedir}bower_components/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
 
-    $SiteConfig.CustomHeaderOutput
+    $SiteConfig.CustomHeaderOutput.RAW
 </head>
 <body>
     <% if $SiteConfig.ShowResponsiveOutput %>
@@ -71,6 +71,6 @@
 <script src="{themedir}javascript/responsive_helper.js"></script>
 <!-- endbuild -->
 
-    $SiteConfig.CustomFooterOutput
+    $SiteConfig.CustomFooterOutput.RAW
 </body>
 </html>
