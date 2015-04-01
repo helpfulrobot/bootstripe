@@ -38,12 +38,6 @@
     <% if $SiteConfig.ShowResponsiveOutput %>
     <div id="responsive"><div></div></div>
     <% end_if %>
-<!--[if lt IE 10]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
-    <a href="http://browsehappy.com/">upgrade your browser</a>
-    to improve your experience.
-</p>
-<![endif]-->
 
     <% include Header %>
     $Layout
@@ -69,6 +63,7 @@
 <script src="{themedir}bower_components/jQuery.dotdotdot/src/js/jquery.dotdotdot.js"></script>
 <script src="{themedir}bower_components/gmaps/gmaps.js"></script>
 <script src="{themedir}javascript/responsive_helper.js"></script>
+<script src="{themedir}javascript/load-browser-update.js"></script>
 <!-- endbuild -->
 
     $SiteConfig.CustomFooterOutput.RAW
