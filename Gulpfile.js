@@ -110,7 +110,7 @@ gulp.task('watch', function() {
 
     gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), ['styles']);
     gulp.watch(path.join(config.src_javascripts, '/**/*.js'), ['scripts']);
-    gulp.watch(path.join(config.src, '/**/*.ss'), ['templates']);
+    gulp.watch(path.join(config.src_tmp, '/**/*.ss'), ['templates']);
 });
 
 // Prep
