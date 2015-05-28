@@ -19,6 +19,7 @@ var _               =   require('lodash'),
 
 var config = {
     // Source Config
+    src                 :    './',                                  // Source Directory
     src_tmp             :    './src/templates/',                    // Source Templates Directory
     src_fonts           :    './src/assets/fonts/',                 // Source Fonts Directory
     src_images          :    './src/assets/images/',                // Source Images Directory
@@ -40,6 +41,12 @@ var config = {
     host                :    'localhost',                           // Webserverhost
     port                :    8080                                   // Webserver port
 };
+
+// Bower
+gulp.task('bower', function() {
+    return bower()
+        .pipe(gulp.dest(config.src)) // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
+});
 
 // Styles
 gulp.task('styles', function () {
@@ -81,8 +88,8 @@ gulp.task('svgtopng', function () {
         .pipe(gulp.dest(config.src_images));
 });
 
-// Image
-gulp.task('images', ['svgtopng'], function() {
+// Image Optimization
+gulp.task('images', ['svgtopng'], function() { // Always call 'svgtopng' before executing
     return gulp.src(path.join(config.src_images, '/**/*.png'))
         .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
         .pipe(gulp.dest(config.dist_images))
@@ -112,12 +119,10 @@ gulp.task('watch', function() {
 
 // Prep
 gulp.task('build', function (cb) {
-    run('clean', 'styles', 'scripts', 'templates', 'images', 'svg', cb);
+    run('clean', 'bower', 'styles', 'scripts', 'templates', 'images', cb);
 });
 
 // Default
 gulp.task('default', function(cb) {
     run('build', ['watch'], cb);
 });
-
-// TODO: Add minify and uglify to css and scripts
