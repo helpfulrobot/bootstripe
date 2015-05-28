@@ -19,7 +19,6 @@ var _               =   require('lodash'),
 
 var config = {
     // Source Config
-    src                 :    './',                                  // Source Directory
     src_tmp             :    './src/templates/',                    // Source Templates Directory
     src_fonts           :    './src/assets/fonts/',                 // Source Fonts Directory
     src_images          :    './src/assets/images/',                // Source Images Directory
@@ -45,7 +44,7 @@ var config = {
 // Bower
 gulp.task('bower', function() {
     return bower()
-        .pipe(gulp.dest(config.src)) // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
+        .pipe(gulp.dest(config.bower)) // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
 });
 
 // Styles
