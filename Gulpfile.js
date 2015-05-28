@@ -98,9 +98,9 @@ gulp.task('fonts', function () {
 });
 
 // Clean
-//gulp.task('clean', function() {
-//    del(path.join(config.dist, '/**/*'))
-//});
+gulp.task('clean', function() {
+    del([config.dist_fonts, config.dist_images, config.dist_javascripts, config.dist_stylesheets, config.dist_tmp])
+});
 
 // Watch
 gulp.task('watch', function() {
@@ -115,7 +115,7 @@ gulp.task('watch', function() {
 
 // Prep
 gulp.task('prep', function (cb) {
-    run(/*'clean', */'styles', 'scripts', 'templates', 'images', 'svg', cb);
+    run('clean', 'styles', 'scripts', 'templates', 'images', 'svg', cb);
 });
 
 // Default
