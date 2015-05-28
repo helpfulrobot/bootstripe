@@ -105,12 +105,12 @@ add a function `getHideChildrenFromNavigation` or a dbfield `HideChildrenFromNav
 
 ### Responsive Information
 
-We have a wicked little tool that will output a bunch of information about the screen size, bootstrap container and what not and to activate it you just need to 
+We have a wicked little tool that will output a bunch of information about the screen size, bootstrap container and what not and to activate it you just need to
 add a function `getShowResponsiveOutput` or a db field `ShowResponsiveOutput` to the SiteConfig and make it return true. When you want it gone set it to false.
 
 ### Analytics
 
-Analytics aren't just for google and we know that, So if you add a function `getCustomFooterOutput` or `getCustomHeaderOutput` 
+Analytics aren't just for google and we know that, So if you add a function `getCustomFooterOutput` or `getCustomHeaderOutput`
 or a dbfield `CustomerFooterOutput` or `CustomerHeaderOutput` to your SiteConfig and we'll deal with activating it making it nice and easy to have different (or
  none at all) tracking code per environment.
 
