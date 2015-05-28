@@ -1,7 +1,6 @@
 <div class="jumbotron">
   <h1>Welcome to $SiteConfig.Title</h1>
 </div>
-
 $Content
 $Form
 

@@ -11,10 +11,10 @@ var _               =   require('lodash'),
     uglify          =   require('gulp-uglify'),
     include         =   require('gulp-include'),
     imagemin        =   require('gulp-imagemin'),
-    svgmin          =   require('gulp-svgmin'),
     cache           =   require('gulp-cache'),
     watch           =   require('gulp-watch'),
-    bower           =   require('gulp-bower')
+    bower           =   require('gulp-bower'),
+    svgtopng        =   require('gulp-svg2png');
     ;
 
 var config = {
@@ -44,6 +44,7 @@ var config = {
 // Styles
 gulp.task('styles', function () {
     return gulp.src(config.src_main_scss)
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded',
             precision: 10,
@@ -51,23 +52,20 @@ gulp.task('styles', function () {
             errLogToConsole: true
         }))
         .pipe(autoprefixer(config.autoprefix))
-        //.pipe(minify())
+        .pipe(minify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.dist_stylesheets))
         .pipe(sync.reload({stream:true}))
 });
-
-// Minify
 
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src(config.src_main_js)
         .pipe(include())
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(config.dist_javascripts))
         .pipe(sync.reload({stream:true}))
 });
-
-// Uglify
 
 // Templates
 gulp.task('templates', function() {
@@ -76,17 +74,17 @@ gulp.task('templates', function() {
         .pipe(sync.reload({stream:true}))
 });
 
-// Image
-gulp.task('images', function() {
-    return gulp.src(path.join(config.src_images, '/**/*.png'))
-        .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-        .pipe(gulp.dest(config.dist_images))
+// SVG to PNG
+gulp.task('svgtopng', function () {
+    gulp.src(path.join(config.src_images, '/**/*.svg'))
+        .pipe(svgtopng())
+        .pipe(gulp.dest(config.src_images));
 });
 
-// SVG
-gulp.task('svg', function() {
-    return gulp.src(path.join(config.src_images, '/**/*.svg'))
-        .pipe(svgmin())
+// Image
+gulp.task('images', ['svgtopng'], function() {
+    return gulp.src(path.join(config.src_images, '/**/*.png'))
+        .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
         .pipe(gulp.dest(config.dist_images))
 });
 
@@ -107,25 +105,19 @@ gulp.task('watch', function() {
     sync({
         proxy: config.host + ':' + config.port
     });
-
     gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), ['styles']);
     gulp.watch(path.join(config.src_javascripts, '/**/*.js'), ['scripts']);
     gulp.watch(path.join(config.src_tmp, '/**/*.ss'), ['templates']);
 });
 
 // Prep
-gulp.task('prep', function (cb) {
+gulp.task('build', function (cb) {
     run('clean', 'styles', 'scripts', 'templates', 'images', 'svg', cb);
 });
 
 // Default
 gulp.task('default', function(cb) {
-    run('prep', ['watch'], cb);
-});
-
-// Build
-gulp.task('build', function (cb) {
-    run('prep', 'minify', 'uglify', cb);
+    run('build', ['watch'], cb);
 });
 
 // TODO: Add minify and uglify to css and scripts

@@ -28,8 +28,8 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic">
 
     <!-- build:css({.,.tmp}) css/layout.css -->
-    <link rel="stylesheet" href="{themedir}css/layout.css">
-    <link rel="stylesheet" href="{themedir}bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/themes/bootstripe/css/layout.css">
+    <link rel="stylesheet" href="/themes/bootstripebower_components/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
 
     $SiteConfig.CustomHeaderOutput.RAW
@@ -64,6 +64,7 @@
 <script src="{themedir}bower_components/gmaps/gmaps.js"></script>
 <script src="{themedir}javascript/responsive_helper.js"></script>
 <script src="{themedir}javascript/load-browser-update.js"></script>
+<script src="/themes/bootstripe/javascript/layout.js"></script>
 <!-- endbuild -->
 
     $SiteConfig.CustomFooterOutput.RAW
