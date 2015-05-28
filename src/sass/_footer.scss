@@ -1,0 +1,11 @@
+// ============================================================================
+// Footer
+// ============================================================================
+
+.footer {
+  padding-top: ($line-height-computed * 2);
+  padding-bottom: ($line-height-computed * 2);
+  margin-top: ($line-height-computed * 4);
+
+  border-top: solid 1px $gray-lighter;
+}

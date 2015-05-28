@@ -1,0 +1,12 @@
+.idea/
+.sass-cache/
+.tmp/
+/*.png
+/*.ico
+/bower_components/
+/css/
+/fonts/
+/images/
+/javascript/
+/node_modules/
+/templates/

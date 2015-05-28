@@ -1,0 +1,30 @@
+{
+  "name": "xplore/bootstripe",
+  "description": "A SilverStripe theme built with Grunt and Bower, incorporating Bootstrap and Font Awesome",
+  "type": "silverstripe-theme",
+  "homepage": "https://github.com/XploreNet/bootstripe",
+  "keywords": [
+    "silverstripe",
+    "theme",
+    "bootstrap",
+    "grunt",
+    "bower",
+    "sass",
+    "font awesome"
+  ],
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "Xplore",
+      "email": "developers@xplore.net",
+      "homepage": "https://github.com/XploreNet"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/XploreNet/bootstripe/issues"
+  },
+  "require": {
+    "silverstripe/cms": "~3.1",
+    "silverstripe/framework": "~3.1"
+  }
+}

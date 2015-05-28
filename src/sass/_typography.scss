@@ -1,0 +1,30 @@
+// ============================================================================
+// Typography Stylesheet
+//
+// Defines additional styles which can be applied in the CMS
+// ============================================================================
+
+
+
+// Bootstrap Styles
+// Styles which you want users to be able to select in the CMS
+// ----------------------------------------------------------------------------
+
+.lead {
+  // For the style to register, it needs some kind of definition.
+  // Just apply the default display value
+  display: block;
+}
+
+
+
+// Custom Styles
+//
+// Styles which will appear in the Styles dropdown in the CMS
+// ----------------------------------------------------------------------------
+
+.btn-default {
+  display: inline-block;
+
+  @extend .btn;
+}
