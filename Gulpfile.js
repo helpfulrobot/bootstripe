@@ -21,23 +21,24 @@ var config = {
     // Source Config
     src_tmp             :    './src/templates/',                    // Source Templates Directory
     src_fonts           :    './src/assets/fonts/',                 // Source Fonts Directory
-    src_images          :    './src/assets/images/',                   // Source Images Directory
+    src_images          :    './src/assets/images/',                // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
     src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
     src_main_scss       :    './src/sass/layout.scss',              // Source main.scss
-    src_main_js         :    './src/javascript/main.js',            // Source main.js
+    src_main_js         :    './src/javascript/layout.js',          // Source main.js
     // Destination Config
-    dist_fonts          :    './fonts/',               // Destination Fonts Directory
-    dist_images         :    './images/',                 // Destination Images Directory
-    dist_javascripts    :    './javascript/',                  // Destination Javascripts Directory
-    dist_stylesheets    :    './css/',                 // Destination Styles Sheets Directory
+    dist_tmp            :    './templates/',                        // Destination Templates Directory
+    dist_fonts          :    './fonts/',                            // Destination Fonts Directory
+    dist_images         :    './images/',                           // Destination Images Directory
+    dist_javascripts    :    './javascript/',                       // Destination Javascripts Directory
+    dist_stylesheets    :    './css/',                              // Destination Styles Sheets Directory
     // Bower Config
-    bower               :    './bower_components/',             // Bower Components
+    bower               :    './bower_components/',                 // Bower Components
     // Auto Prefixer
-    autoprefix          :    'last 3 version',                  // Number of version Auto Prefixer to use
+    autoprefix          :    'last 3 version',                      // Number of version Auto Prefixer to use
     // Server
-    host                :    'localhost',                       // Webserverhost
-    port                :    8080                                 // Webserver port
+    host                :    'localhost',                           // Webserverhost
+    port                :    8080                                   // Webserver port
 };
 
 // Styles
@@ -46,7 +47,8 @@ gulp.task('styles', function () {
         .pipe(sass({
             outputStyle: 'expanded',
             precision: 10,
-            includePaths: config.bower
+            includePaths: [config.bower],
+            errLogToConsole: true
         }))
         .pipe(autoprefixer(config.autoprefix))
         //.pipe(minify())
@@ -69,8 +71,8 @@ gulp.task('scripts', function () {
 
 // Templates
 gulp.task('templates', function() {
-    return gulp.src([path.join(config.src, '/**/*.ss')])
-        .pipe(gulp.dest(config.tmp))
+    return gulp.src([path.join(config.src_tmp, '/**/*.ss')])
+        .pipe(gulp.dest(config.dist_tmp))
         .pipe(sync.reload({stream:true}))
 });
 
@@ -113,7 +115,7 @@ gulp.task('watch', function() {
 
 // Prep
 gulp.task('prep', function (cb) {
-    run(/*'clean', */'styles', 'scripts', 'php', 'images', 'svg', cb);
+    run(/*'clean', */'styles', 'scripts', 'templates', 'images', 'svg', cb);
 });
 
 // Default

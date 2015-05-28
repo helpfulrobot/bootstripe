@@ -1,6 +1,6 @@
 {
   "name": "BootStripe",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "descrption": "A SilverStripe theme built with Gulp and Bower, incorporating Bootstrap and Font Awesome",
   "keywords": [
     "silverstripe",
