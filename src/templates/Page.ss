@@ -40,7 +40,9 @@
     <% end_if %>
 
     <% include Header %>
-    $Layout
+    <main>
+        $Layout
+    </main>
     <% include Footer %>
 
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
