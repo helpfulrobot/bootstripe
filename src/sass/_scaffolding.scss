@@ -5,3 +5,11 @@
 body {
 
 }
+
+.link {
+  color: #0000FF;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
