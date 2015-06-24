@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="continer">
+    <div class="container">
         <p>Copyright &copy; $Now.Year CLIENT NAME. All Rights Reserved.</p>
 
         <p>
