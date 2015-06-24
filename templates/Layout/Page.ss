@@ -19,7 +19,3 @@
         <% end_if %>
     </div>
 </div>
-
-
-<!-- build:js(src) javascript/homepage.js -->
-<!-- endbuild -->

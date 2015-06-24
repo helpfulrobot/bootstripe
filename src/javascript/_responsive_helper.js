@@ -11,5 +11,5 @@ $(function () {
         }
     }).resize();
 
-    $(".dotdotdot").dotdotdot({watch: true});
+    // $(".dotdotdot").dotdotdot({watch: true});
 });
