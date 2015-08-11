@@ -9,21 +9,25 @@
     <meta name="description" content="$MetaDescription">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="msapplication-square70x70logo" content="$ThemeDir/windows-tile-70x70.png">
-    <meta name="msapplication-square150x150logo" content="$ThemeDir/windows-tile-150x150.png">
-    <meta name="msapplication-square310x310logo" content="$ThemeDir/windows-tile-310x310.png">
-    <meta name="msapplication-TileImage" content="$ThemeDir/windows-tile-144x144.png">
-    <meta name="msapplication-TileColor" content="#231f20">
-    <link rel="apple-touch-icon" sizes="152x152" href="$ThemeDir/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="$ThemeDir/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="$ThemeDir/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="$ThemeDir/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="$ThemeDir/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="$ThemeDir/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="$ThemeDir/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="$ThemeDir/apple-touch-icon.png">
-    <link rel="shortcut icon" href="$ThemeDir/favicon.ico">
-    <link rel="icon" type="image/png" sizes="64x64" href="$ThemeDir/favicon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/themes/default/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/themes/default/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/themes/default/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/themes/default/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/themes/default/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/themes/default/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/themes/default/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/themes/default/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/themes/default/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/themes/default/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/themes/default/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/themes/default/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/themes/default/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/themes/default/manifest.json">
+    <link rel="shortcut icon" href="/themes/default/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/themes/default/mstile-144x144.png">
+    <meta name="msapplication-config" content="/themes/default/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic">
 
