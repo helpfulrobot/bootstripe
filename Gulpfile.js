@@ -19,13 +19,15 @@ var _               =   require('lodash'),
 
 var config = {
     // Source Config
-    src_tmp            :    './templates/',                        // Source Templates
-    src_fonts           :    './src/assets/fonts/',                 // Source Fonts Directory
-    src_images          :    './src/assets/images/',                // Source Images Directory
+    src_fonts           :    [
+                                './bower_components/bootstrap-sass-official/assets/fonts/bootstrap',
+                                './bower_components/font-awesome/fonts/*' // Glob FA to keep paths default
+                             ],
+    src_tmp             :     './templates/',                       // Source Templates
+    src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
-    src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
-    src_main_scss       :    './src/sass/layout.scss',              // Source main.scss
     src_main_js         :    './src/javascript/layout.js',          // Source main.js
+    src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
     // Destination Config
     dist_fonts          :    './fonts/',                            // Destination Fonts Directory
     dist_images         :    './images/',                           // Destination Images Directory
@@ -48,7 +50,7 @@ gulp.task('bower', function() {
 
 // Styles
 gulp.task('styles', function () {
-    return gulp.src(config.src_main_scss)
+    return gulp.src(path.join(config.src_stylesheets, '/**/*.scss'))
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'expanded',
@@ -58,7 +60,7 @@ gulp.task('styles', function () {
         }))
         .pipe(autoprefixer(config.autoprefix))
         .pipe(minify())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.dist_stylesheets))
         .pipe(sync.reload({stream:true}))
 });
@@ -94,7 +96,7 @@ gulp.task('images', ['svgtopng'], function() { // Always call 'svgtopng' before 
 
 // Fonts
 gulp.task('fonts', function () {
-    return gulp.src(path.join(config.src_fonts, '/**/*'))
+    return gulp.src(config.src_fonts)
         .pipe(gulp.dest(config.dist_fonts));
 });
 

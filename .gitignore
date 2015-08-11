@@ -2,8 +2,6 @@
 .idea/
 .sass-cache/
 .tmp/
-/*.png
-/*.ico
 /bower_components/
 /css/
 /fonts/

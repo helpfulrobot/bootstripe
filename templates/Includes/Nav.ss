@@ -23,9 +23,9 @@
                                     $MenuTitle.XML <i class="fa fa-chevron-down"></i>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <% if $ShowInDropdownIfParent && $LinkingMode == 'section' %>
+                                    <% if $ShowInDropdownIfParent && $LinkingMode == 'section' && $ClassName != 'RedirectorPage' %>
                                         <li class="link"><a href="$Link" title="$Title.XML">$MenuTitle.XML</a></li>
-                                    <% else_if $ShowInDropdownIfParent %>
+                                    <% else_if $ShowInDropdownIfParent && $ClassName != 'RedirectorPage' %>
                                         <li class="$LinkingMode"><a href="$Link" title="$Title.XML">$MenuTitle.XML</a>
                                         </li>
                                     <% end_if %>

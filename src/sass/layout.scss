@@ -14,11 +14,6 @@
 // Custom Bootstrap
 @import 'bootstrap';
 
-// SilverStripe - Bootstrap conversions
-@import 'silverstripe_nav';
-@import 'silverstripe_forms';
-@import 'silverstripe_images';
-
 // Core CSS
 @import 'scaffolding';
 @import 'forms';
@@ -35,6 +30,14 @@
 @import 'header';
 @import 'footer';
 @import 'search';
+
+// SilverStripe - Bootstrap conversions
+@import 'silverstripe_nav';
+@import 'silverstripe_forms';
+@import 'silverstripe_images';
+
+// Overrides
+@import 'overrides';
 
 // Layouts
 @import 'homepage';
