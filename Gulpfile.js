@@ -23,7 +23,6 @@ var config = {
                                 './bower_components/bootstrap-sass-official/assets/fonts/bootstrap',
                                 './bower_components/font-awesome/fonts/*' // Glob FA to keep paths default
                              ],
-    src_tmp             :     './templates/',                       // Source Templates
     src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
     src_main_js         :    './src/javascript/layout.js',          // Source main.js
@@ -57,7 +56,7 @@ gulp.task('styles', function () {
             precision: 10,
             includePaths: [config.bower],
             errLogToConsole: true
-        }))
+        }).on('error', sass.logError))
         .pipe(autoprefixer(config.autoprefix))
         .pipe(minify())
         .pipe(sourcemaps.write('./'))
@@ -73,12 +72,6 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest(config.dist_javascripts))
         .pipe(sync.reload({stream:true}))
 });
-
-// Templates
-gulp.task('templates', function() {
-    return gulp.src(path.join(config.src_tmp, '/**/*.ss'))
-        .pipe(sync.reload({stream:true}))
-})
 
 // SVG to PNG
 gulp.task('svgtopng', function () {
@@ -112,12 +105,11 @@ gulp.task('watch', function() {
     });
     gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), ['styles']);
     gulp.watch(path.join(config.src_javascripts, '/**/*.js'), ['scripts']);
-    gulp.watch(path.join(config.src_tmp, '/**/*.ss'), ['templates']);
 });
 
 // Prep
 gulp.task('build', function (cb) {
-    run('clean', 'bower', 'styles', 'scripts', 'templates', 'fonts', 'images', cb);
+    run('clean', 'bower', 'styles', 'scripts', 'fonts', 'images', cb);
 });
 
 // Default
