@@ -5,3 +5,11 @@
 #__bs_notify__ {
   display: none !important;
 }
+
+.w-lightbox-backdrop {
+  z-index: 9000 !important;
+}
+
+.gallery-image {
+  margin-bottom: 15px;
+}
