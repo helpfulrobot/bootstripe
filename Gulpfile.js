@@ -20,12 +20,11 @@ var _               =   require('lodash'),
 var config = {
     // Source Config
     src_fonts           :    [
-                                './bower_components/bootstrap-sass-official/assets/fonts/bootstrap',
-                                './bower_components/font-awesome/fonts/*' // Glob FA to keep paths default
+                            './bower_components/bootstrap-sass-official/assets/fonts/**/*',
+                            './bower_components/font-awesome/fonts/**/*' // Glob FA to keep paths default
                              ],
     src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
-    src_main_js         :    './src/javascript/layout.js',          // Source main.js
     src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
     // Destination Config
     dist_fonts          :    './fonts/',                            // Destination Fonts Directory
@@ -66,7 +65,7 @@ gulp.task('styles', function () {
 
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src(config.src_main_js)
+    return gulp.src(path.join(config.src_javascripts, '/[^_]*.js'))
         .pipe(include())
         .pipe(uglify())
         .pipe(gulp.dest(config.dist_javascripts))

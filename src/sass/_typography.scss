@@ -122,6 +122,15 @@ main {
   p {
 
   }
+  a {
+    transition: all ease 500ms;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  hr {
+
+  }
 }
 
 // Custom Styles

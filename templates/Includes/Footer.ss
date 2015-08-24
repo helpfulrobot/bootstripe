@@ -19,7 +19,7 @@
                 <br/>
 
                 <p>
-                    <a href="#">Site by AGENCY</a>
+                    <a href="#" target="_blank">Site by AGENCY</a>
                 </p>
             </div>
         </div>
