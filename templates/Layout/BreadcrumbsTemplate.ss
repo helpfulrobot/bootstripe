@@ -1,0 +1,11 @@
+<% if $Pages %>
+    <ol class="breadcrumb">
+        <% loop $Pages %>
+            <% if $Last %>
+                <li class="active">$MenuTitle.XML</li>
+            <% else %>
+                <li><a href="$Link">$MenuTitle.XML</a>&gt;</li>
+            <% end_if %>
+        <% end_loop %>
+    </ol>
+<% end_if %>
