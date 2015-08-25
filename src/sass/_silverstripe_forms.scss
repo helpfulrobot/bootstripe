@@ -48,6 +48,8 @@ form .field {
   textarea {
     @extend .form-control;
 
+    height: auto;
+
     &.required {
       // This is a direct implementation of the Bootstrap form-control-required mixin
 
