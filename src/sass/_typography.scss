@@ -124,7 +124,7 @@ main {
   }
   a {
     transition: all ease 500ms;
-    &:hover {
+    &:hover, &:focus, &:active {
       text-decoration: none;
     }
   }
