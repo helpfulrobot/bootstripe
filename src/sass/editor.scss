@@ -27,6 +27,10 @@ body.mceContentBody {
     font-family: "lucida grande", tahoma, verdana, arial, sans-serif !important;
     line-height: 1 !important;
   }
+  a {
+    text-decoration: underline !important;
+  }
+
 
   // Import the style definitions here so they don't populate the TinyMCE
   // style selector
