@@ -3,7 +3,11 @@
 // ============================================================================
 
 #__bs_notify__ {
-  display: none !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  border-radius: 0 !important;
 }
 
 .w-lightbox-backdrop {
