@@ -6,6 +6,10 @@ body {
 
 }
 
+a[data-scroll] {
+  cursor: pointer;
+}
+
 .strong {
   font-weight: bold;
 }
@@ -18,3 +22,11 @@ body {
   }
 }
 
+.img-centered {
+  margin-left: auto;
+  margin-right: auto;
+  &.spaced {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -11,17 +11,14 @@ var _               =   require('lodash'),
     uglify          =   require('gulp-uglify'),
     include         =   require('gulp-include'),
     imagemin        =   require('gulp-imagemin'),
-    cache           =   require('gulp-cache'),
     watch           =   require('gulp-watch'),
     bower           =   require('gulp-bower'),
     svgtopng        =   require('gulp-svg2png');
-;
 
 var config = {
     // Source Config
     src_fonts           :    [
-                            './bower_components/bootstrap-sass-official/assets/fonts/**/*',
-                            './bower_components/font-awesome/fonts/**/*' // Glob FA to keep paths default
+                            './bower_components/bootstrap-sass-official/assets/fonts/**/*'
                              ],
     src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
@@ -82,7 +79,7 @@ gulp.task('svgtopng', function () {
 // Image Optimization
 gulp.task('images', ['svgtopng'], function() { // Always call 'svgtopng' before executing
     return gulp.src(path.join(config.src_images, '/**/*'))
-        .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+        .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
         .pipe(gulp.dest(config.dist_images))
 });
 

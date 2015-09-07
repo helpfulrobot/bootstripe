@@ -25,7 +25,6 @@
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-bower": "*",
-    "gulp-cache": "*",
     "gulp-imagemin": "*",
     "gulp-include": "*",
     "gulp-minify-css": "*",
