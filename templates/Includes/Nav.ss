@@ -1,14 +1,15 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navPrimary">
-                <span class="sr-only">Toggle navigation</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="$BaseHref">$SiteConfig.Title</a>
+            <a class="navbar-brand" href="/">
+                BRAND
+            </a>
         </div>
 
         <div id="navPrimary" class="navbar-collapse collapse">

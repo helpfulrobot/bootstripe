@@ -30,10 +30,7 @@
     <meta name="msapplication-config" content="/themes/default/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic">
-
     <link rel="stylesheet" href="/themes/default/css/layout.css">
-    <link rel="stylesheet" href="/themes/default/bower_components/font-awesome/css/font-awesome.css">
 
     $SiteConfig.CustomHeaderOutput.RAW
 </head>
@@ -43,9 +40,9 @@
     <% end_if %>
 
     <% include Header %>
-    <main>
+    <div class="main">
         $Layout
-    </main>
+    </div>
     <% include Footer %>
 
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
