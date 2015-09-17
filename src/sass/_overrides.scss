@@ -1,0 +1,25 @@
+// ============================================================================
+// Overrides
+// ============================================================================
+
+
+#ForgotPassword {
+  display: inline-block;
+  margin: 20px 10px;
+}
+
+#__bs_notify__ {
+  top: auto !important;
+  right: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  border-radius: 0 !important;
+}
+
+.w-lightbox-backdrop {
+  z-index: 9000 !important;
+}
+
+.gallery-image {
+  margin-bottom: 15px;
+}

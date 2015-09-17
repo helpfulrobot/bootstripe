@@ -1,0 +1,55 @@
+#responsive {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  font-size: 16px;
+  background: #fff;
+
+  &:before {
+    display: block;
+    content: "Default - Less than #{$screen-xs-min}";
+
+    @media (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+      display: block;
+      content: "XS - Between #{$screen-xs-min} and #{$screen-xs-max}";
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      display: block;
+      content: "SM - Between #{$screen-sm-min} and #{$screen-sm-max}";
+    }
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      display: block;
+      content: "MD - Between #{$screen-md-min} and #{$screen-md-max}";
+    }
+
+    @media (min-width: $screen-lg-min) {
+      display: block;
+      content: "LG - Greater than #{$screen-lg-min}";
+    }
+  }
+
+  &:after {
+    @media (max-width: $screen-xs-max) {
+      display: block;
+      content: "Container: 100%";
+    }
+
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      display: block;
+      content: "Container: #{$container-sm - $grid-gutter-width}";
+    }
+
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      display: block;
+      content: "Container: #{$container-md - $grid-gutter-width}";
+    }
+
+    @media (min-width: $screen-lg-min) {
+      display: block;
+      content: "Container: #{$container-lg - $grid-gutter-width}";
+    }
+  }
+}

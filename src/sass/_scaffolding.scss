@@ -1,0 +1,46 @@
+// ============================================================================
+// Scaffolding
+// ============================================================================
+
+body {
+
+}
+
+a[data-scroll] {
+  cursor: pointer;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.fake-link {
+  color: #0000FF;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.img-centered {
+  margin-left: auto;
+  margin-right: auto;
+  &.spaced {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.img-restricted {
+  max-width: 300px;
+  @media (min-width: $screen-sm-min) {
+    max-width: 100%;
+  }
+}
+
+.map {
+  min-height: 200px;
+  @media (min-width: $screen-sm-min) {
+    min-height: 400px;
+  }
+}

@@ -1,0 +1,127 @@
+// ============================================================================
+// Navbar
+// ============================================================================
+
+.navbar {
+  // Collapsed Styles
+  // background-color: ; // Navbar background colour
+  // border-color: ; // Navbar border colour
+  .navbar-nav {
+    li {
+      a {
+        // color: ; // Navbar link colour
+        // background-color: ; // Navbar link background colour
+        &:hover, &:focus, &:active {
+          // color: ; // Navbar link colour when hovered/focused/activated
+          // background-color: ; // Navbar link background colour when hovered/focused/activated
+        }
+      }
+      &.current {
+        a {
+          // color: ; // Navbar link colour when current (SS)
+          // background-color: ; // Navbar link background colour when current (SS)
+          &:hover, &:focus, &:active {
+            // color: ; // Navbar link colour when hovered/focused/activated and current (SS)
+            // background-color: ; // Navbar link background colour when hovered/focused/activated and current (SS)
+          }
+        }
+      }
+    }
+    .open {
+      a {
+        // color: ; // Navbar link colour when open
+        // background-color: ; // Navbar link background colour when open
+        &:hover, &:focus, &:active {
+          // color: ; // Navbar link colour when open and hovered/focused/activated
+          // background-color: ; // Navbar link background colour when open and hovered/focused/activated
+        }
+      }
+      .dropdown-menu {
+        // background-color: ; // Navbar dropdown background colour
+        // border-color: ; // Navbar dropdown border colour
+        li {
+          a {
+            // background-color: ; // Navbar dropdown link background colour
+            // border-color: ; // Navbar dropdown link Navbar border colour
+            &:hover, &:focus, &:active {
+              // color: ; // Navbar dropdown link colour when hovered/focused/activated
+              // background-color: ; // Navbar dropdown link background colour when hovered/focused/activated
+            }
+          }
+          &.current {
+            a {
+              // color: ; // Navbar dropdown link colour when current (SS)
+              // background-color: ; // Navbar dropdown link background colour when current (SS)
+              &:hover, &:focus, &:active {
+                // color: ; // Navbar dropdown link colour when hovered/focused/activated and current (SS)
+                // background-color: ; // Navbar dropdown link background colour when hovered/focused/activated and current (SS)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    // Expanded Styles
+    // background-color: ; // Navbar background colour
+    // border-color: ; // Navbar border colour
+    .navbar-nav {
+      li {
+        a {
+          // color: ; // Navbar link colour
+          // background-color: ; // Navbar link background colour
+          &:hover, &:focus, &:active {
+            // color: ; // Navbar link colour when hovered/focused/activated
+            // background-color: ; // Navbar link background colour when hovered/focused/activated
+          }
+        }
+        &.current {
+          a {
+            // color: ; // Navbar link colour when current (SS)
+            // background-color: ; // Navbar link background colour when current (SS)
+            &:hover, &:focus, &:active {
+              // color: ; // Navbar link colour when hovered/focused/activated and current (SS)
+              // background-color: ; // Navbar link background colour when hovered/focused/activated and current (SS)
+            }
+          }
+        }
+      }
+      .open {
+        a {
+          // color: ; // Navbar link colour when open
+          // background-color: ; // Navbar link background colour when open
+          &:hover, &:focus, &:active {
+            // color: ; // Navbar link colour when open and hovered/focused/activated
+            // background-color: ; // Navbar link background colour when open and hovered/focused/activated
+          }
+        }
+        .dropdown-menu {
+          // background-color: ; // Navbar dropdown background colour
+          // border-color: ; // Navbar dropdown border colour
+          li {
+            a {
+              // background-color: ; // Navbar dropdown link background colour
+              // border-color: ; // Navbar dropdown link Navbar border colour
+              &:hover, &:focus, &:active {
+                // color: ; // Navbar dropdown link colour when hovered/focused/activated
+                // background-color: ; // Navbar dropdown link background colour when hovered/focused/activated
+              }
+            }
+            &.current {
+              a {
+                // color: ; // Navbar dropdown link colour when current (SS)
+                // background-color: ; // Navbar dropdown link background colour when current (SS)
+                &:hover, &:focus, &:active {
+                  // color: ; // Navbar dropdown link colour when hovered/focused/activated and current (SS)
+                  // background-color: ; // Navbar dropdown link background colour when hovered/focused/activated and current (SS)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
