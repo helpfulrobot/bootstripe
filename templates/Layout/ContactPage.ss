@@ -48,6 +48,7 @@
                     content: '{$MarkerContent.JS}'
                 }
             });
+            new InteractionControl(map);
         });
     </script>
 <% end_if %>

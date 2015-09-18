@@ -18,4 +18,11 @@
             </div>
         <% end_if %>
     </div>
+    <% if $HasContentBlocks %>
+        <div class="row">
+            <% loop $DisplayedContentBlocks %>
+                $Me
+            <% end_loop %>
+        </div>
+    <% end_if %>
 </div>
