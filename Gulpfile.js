@@ -19,7 +19,7 @@ var config = {
     // Source Config
     src_fonts           :    [
                             './src/fonts/**/*',
-                            './bower_components/bootstrap-sass-official/assets/fonts/**/*'
+                            './bower_components/open-iconic/font/fonts/**'
                              ],
     src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
