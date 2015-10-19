@@ -10,11 +10,23 @@ body {
   font-weight: bold;
 }
 
-.fake-link {
-  color: #0000FF;
-  text-decoration: underline;
-  &:hover {
-    cursor: pointer;
+.overlay {
+  position: relative;
+  &:before {
+    content: '';
+    transition: opacity ease 500ms;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0;
+  }
+  &:hover, &:active, &:focus {
+    &:before {
+      opacity: .5;
+    }
   }
 }
 
