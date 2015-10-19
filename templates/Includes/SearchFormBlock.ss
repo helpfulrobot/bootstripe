@@ -1,4 +1,4 @@
-<form action="Search/SearchForm/" method="get" enctype="application/x-www-form-urlencoded" role="search">
+<form action="Search/SearchForm/" method="get" enctype="application/x-www-form-urlencoded" class="block-search" role="search">
     <div class="form-group">
         <label class="sr-only">Search</label>
         <input type="text" name="Search" placeholder="Search" value="{$Value}" class="form-control"/>

@@ -1,4 +1,4 @@
-<form action="Search/SearchForm/" method="get" enctype="application/x-www-form-urlencoded" role="search">
+<form action="Search/SearchForm/" method="get" enctype="application/x-www-form-urlencoded" class="inline-search" role="search">
     <div class="input-group">
         <input type="text" name="Search" placeholder="Search" value="{$Value}" class="form-control">
         <span class="input-group-btn">
