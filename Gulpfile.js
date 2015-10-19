@@ -10,20 +10,22 @@ var _               =   require('lodash'),
     minify          =   require('gulp-minify-css'),
     uglify          =   require('gulp-uglify'),
     include         =   require('gulp-include'),
+    concat          =   require('gulp-concat'),
     imagemin        =   require('gulp-imagemin'),
     watch           =   require('gulp-watch'),
     bower           =   require('gulp-bower'),
     svgtopng        =   require('gulp-svg2png');
 
+
+
 var config = {
     // Source Config
-    src_fonts           :    [
-                            './src/fonts/**/*',
-                            './bower_components/open-iconic/font/fonts/**'
-                             ],
     src_images          :    './src/images/',                       // Source Images Directory
     src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
     src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
+    // Vendors
+    vend_main_css       :    'vendor.css',
+    vend_main_js        :    'vendor.js',
     // Destination Config
     dist_fonts          :    './fonts/',                            // Destination Fonts Directory
     dist_images         :    './images/',                           // Destination Images Directory
@@ -38,10 +40,34 @@ var config = {
     port                :    8888                                   // Webserver port
 };
 
+var files = {
+    src_fonts       : [
+        './src/fonts/**/*',
+        config.bower + '/font-awesome/fonts/**/*'
+    ],
+    vend_stylesheets: [
+        config.bower + '/font-awesome/css/font-awesome.css'
+    ],
+    vend_javascripts: [
+        config.bower + '/jquery/dist/jquery.js',
+        config.bower + '/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+        config.bower + '/gmaps/gmaps.js'
+    ]
+};
+
 // Bower
 gulp.task('bower', function() {
     return bower()
-        .pipe(gulp.dest(config.bower)) // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
+        .pipe(gulp.dest(config.bower)); // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
+});
+
+// Vendor Styles
+
+gulp.task('vendor-styles', function () {
+    return gulp.src(files.vend_stylesheets)
+        .pipe(concat(config.vend_main_css))
+        .pipe(minify())
+        .pipe(gulp.dest(config.dist_stylesheets))
 });
 
 // Styles
@@ -54,11 +80,20 @@ gulp.task('styles', function () {
             includePaths: [config.bower],
             errLogToConsole: true
         }).on('error', sass.logError))
-        //.pipe(autoprefixer(config.autoprefix))
-        //.pipe(minify())
+        .pipe(autoprefixer(config.autoprefix))
+        .pipe(minify({rebase: false}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(config.dist_stylesheets))
         .pipe(sync.reload({stream:true}))
+});
+
+// Vendor Scripts
+
+gulp.task('vendor-scripts', function () {
+    return gulp.src(files.vend_javascripts)
+        .pipe(concat(config.vend_main_js))
+        .pipe(uglify())
+        .pipe(gulp.dest(config.dist_javascripts))
 });
 
 // Scripts
@@ -86,7 +121,7 @@ gulp.task('images', ['svgtopng'], function() { // Always call 'svgtopng' before 
 
 // Fonts
 gulp.task('fonts', function () {
-    return gulp.src(config.src_fonts)
+    return gulp.src(files.src_fonts)
         .pipe(gulp.dest(config.dist_fonts));
 });
 
@@ -106,7 +141,7 @@ gulp.task('watch', function() {
 
 // Prep
 gulp.task('build', function (cb) {
-    run('clean', 'bower', 'styles', 'scripts', 'fonts', 'images', cb);
+    run('clean', 'bower', 'vendor-scripts', 'vendor-styles', 'styles', 'scripts', 'fonts', 'images', cb);
 });
 
 // Default

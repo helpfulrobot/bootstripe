@@ -14,7 +14,7 @@
 
         <div id="navPrimary" class="navbar-collapse collapse">
             <% if $Menu(1) %>
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <% loop $Menu(1) %>
                         <li class="$LinkingMode <% if $Children %>dropdown<% end_if %>">
                             <% if not $Children || $HideChildrenFromNavigation  %>
@@ -37,11 +37,20 @@
                                     <% end_loop %>
                                 </ul>
                             <% end_if %>
-                        </li><% end_loop %>
+                        </li>
+                    <% end_loop %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <% include SearchFormInline %>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             <% end_if %>
-
-            <% include SiteSearch %>
         </div>
     </div>
 </nav>

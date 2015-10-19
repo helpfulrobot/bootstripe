@@ -30,6 +30,7 @@
     <meta name="msapplication-config" content="/themes/default/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="stylesheet" href="/themes/default/css/vendor.css">
     <link rel="stylesheet" href="/themes/default/css/layout.css">
 
     $SiteConfig.CustomHeaderOutput.RAW
@@ -45,6 +46,7 @@
 
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
 
+<script src="/themes/default/javascript/vendor.js"></script>
 <script src="/themes/default/javascript/layout.js"></script>
 
     $SiteConfig.CustomFooterOutput.RAW

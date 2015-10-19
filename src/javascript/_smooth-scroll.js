@@ -1,12 +1,15 @@
-// http://www.paulund.co.uk/smooth-scroll-to-internal-links-with-jquery
-$(document).ready(function(){
-    $('a[data-scroll]').on('click',function (e) {
-        e.preventDefault();
+https://css-tricks.com/snippets/jquery/smooth-scrolling/
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        || location.hostname == this.hostname) {
 
-        var $target = $($(this).data("scroll"));
-
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 900, 'swing');
-    });
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
 });

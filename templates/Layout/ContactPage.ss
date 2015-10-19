@@ -5,11 +5,13 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <div id="map" class="map"></div>
+<% if $Latitude && $Longitude %>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="map" class="map"></div>
+        </div>
     </div>
-</div>
+<% end_if %>
 <div class="container">
     <div class="row">
         <% if $Form %>
@@ -32,18 +34,18 @@
         var map;
         $(document).ready(function () {
             map = new GMaps({
-                el: '#map',
-                lat: '{$Latitude}',
-                lng: '{$Longitude}',
-                zoom: parseInt('{$MapZoom}'),
-                mapType: '{$MapType}',
+                el         : '#map',
+                lat        : '{$Latitude}',
+                lng        : '{$Longitude}',
+                zoom       : parseInt('{$MapZoom}'),
+                mapType    : '{$MapType}',
                 scrollwheel: false,
-                draggable: false
+                draggable  : false
             });
             map.addMarker({
-                lat: '{$Latitude}',
-                lng: '{$Longitude}',
-                title: '{$MarkerTitle}',
+                lat       : '{$Latitude}',
+                lng       : '{$Longitude}',
+                title     : '{$MarkerTitle}',
                 infoWindow: {
                     content: '{$MarkerContent.JS}'
                 }

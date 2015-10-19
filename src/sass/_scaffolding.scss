@@ -6,10 +6,6 @@ body {
 
 }
 
-a[data-scroll] {
-  cursor: pointer;
-}
-
 .strong {
   font-weight: bold;
 }
@@ -35,12 +31,14 @@ a[data-scroll] {
 
 .img-restricted {
   &.img-responsive {
+    width: 100%;
     max-width: 300px;
     @media (min-width: $screen-sm-min) {
       max-width: 100%;
     }
   }
   .img-responsive {
+    width: 100%;
     max-width: 300px;
     @media (min-width: $screen-sm-min) {
       max-width: 100%;

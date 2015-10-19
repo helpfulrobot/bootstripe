@@ -126,8 +126,10 @@ ol {
 
 }
 
-ul {
+ul:not(.nav) {
+  li:not(.link, .current) {
 
+  }
 }
 
 p {
