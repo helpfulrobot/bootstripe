@@ -43,7 +43,9 @@ var config = {
 var files = {
     src_fonts       : [
         './src/fonts/**/*',
-        config.bower + '/font-awesome/fonts/**/*'
+        config.bower + '/font-awesome/fonts/**/*',
+        config.bower + '/open-iconic/font/fonts/**/*',
+        config.bower + '/bootstrap-sass-official/assets/fonts/bootstrap/**/*'
     ],
     vend_stylesheets: [
         config.bower + '/font-awesome/css/font-awesome.css'
