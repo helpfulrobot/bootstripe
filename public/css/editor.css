@@ -1,0 +1,28 @@
+* {
+  word-wrap: break-word;
+}
+
+a {
+  transition: all ease 500ms;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+body.mceContentBody {
+  /* NEED TO ADD PORSE STYLE EDITOR */
+}
+
+body.mceContentBody td {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*# sourceMappingURL=editor.css.map */

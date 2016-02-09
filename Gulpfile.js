@@ -2,9 +2,13 @@ var _     = require('lodash'),
     path  = require('path'),
     sync  = require('browser-sync'),
     gulp  = require('gulp'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    argv = require('yargs').argv;
 
 var config = require('./gulp/config');
+if(typeof argv.prod !== 'undefined'){
+   config.environment = 'prod';
+}
 
 gulp.task('bower', require('./gulp/tasks/bower'));
 gulp.task('clean', require('./gulp/tasks/clean'));
@@ -28,21 +32,13 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('build', function () {
-    config.environment = 'prod';
-    return gulp.series(
-        'bower',
-        'clean',
-        gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'scripts', 'images', 'fonts')
-    )
-});
+gulp.task('build', gulp.series(
+    'bower',
+    'clean',
+    gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'scripts', 'images', 'fonts')
+));
 
-gulp.task('default', function () {
-    config.environment = 'dev';
-    gulp.series(
-        'bower',
-        'clean',
-        gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'scripts', 'images', 'fonts'),
+gulp.task('default', gulp.series(
+        'build',
         'watch'
-    )
-});
+));

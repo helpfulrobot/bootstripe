@@ -6,17 +6,15 @@
 // ----------------------------------------------------------------------------
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
-@import 'open-iconic/font/css/open-iconic-bootstrap.scss';
 
 // Site variables
-@import 'global';
 
 // Foundation
-@import "foundation-sites/scss/foundation.scss";
+@import "foundation";
+
+@include foundation-everything($flex: true);
 
 @import 'typography';
-
-@import 'responsive_helper';
 
 // Overrides
 @import 'overrides';

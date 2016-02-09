@@ -16,10 +16,8 @@ var config = {
     // Auto Prefixer
     autoprefix:       'last 3 version',                      // Number of version Auto Prefixer to use
     // Server
-    host:             'localhost',                           // Webserverhost
-    port:             8888,                                   // Webserver port
-    // Clean
-    clean_paths:      [this.dist_fonts, this.dist_images, this.dist_javascripts, this.dist_stylesheets],
+    host:             'demo.dev',                           // Webserverhost
+    port:             80,                                   // Webserver port
     // Environment
     environment:      'dev'
 };
@@ -40,5 +38,9 @@ var files = {
     ]
 };
 
+var clean_paths = [config.dist_fonts, config.dist_images, config.dist_javascripts, config.dist_stylesheets];
+
 config.files = files;
+config.clean_paths = clean_paths;
+
 module.exports = config;

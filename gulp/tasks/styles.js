@@ -1,6 +1,8 @@
 var config = require('../config');
 
 var gulp         = require('gulp'),
+    plumber      = require('gulp-plumber'),
+    path         = require('path'),
     sync         = require('browser-sync'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
@@ -9,14 +11,15 @@ var gulp         = require('gulp'),
 
 module.exports = function () {
     var pipe = gulp.src(path.join(config.src_stylesheets, '/**/*.scss'))
+        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle:     'expanded',
             precision:       10,
-            includePaths:    [config.bower],
+            includePaths: path.join(config.bower, '/foundation-sites/scss'),
             errLogToConsole: true
-        }).on('error', sass.logError))
-        .pipe(autoprefixer(config.autoprefix));
+        }));
+    //.pipe(autoprefixer(config.autoprefix));
 
 
     if (config.environment == 'prod') {
