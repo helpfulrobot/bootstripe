@@ -1,0 +1,49 @@
+{
+  "name": "xplore-bootstripe",
+  "version": "2.1.1",
+  "descrption": "A SilverStripe theme built with Gulp and Bower, incorporating Bootstrap and Font Awesome",
+  "keywords": [
+    "silverstripe",
+    "theme",
+    "bootstrap",
+    "gulp",
+    "bower",
+    "sass",
+    "font awesome"
+  ],
+  "author": {
+    "name": "Xplore",
+    "email": "developers@xplore.net",
+    "url": "https://github.com/XploreNet"
+  },
+  "license": "MIT",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.9.3",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-bower": "0.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-include": "^2.0.2",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-svg2png": "^0.3.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-watch": "^4.3.5",
+    "lodash": "^3.10.1",
+    "path": "^0.12.7",
+    "run-sequence": "^1.1.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/XploreNet/bootstripe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/XploreNet/bootstripe/issues"
+  },
+  "homepage": "https://github.com/XploreNet/bootstripe"
+}

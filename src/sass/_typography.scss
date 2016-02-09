@@ -1,0 +1,161 @@
+// ============================================================================
+// Typography Stylesheet
+//
+// Defines additional styles which can be applied in the CMS
+// ============================================================================
+
+// ATTENTION: Button styles are now in 'editor.scss' due to the unfortunate repercussions of using @extend
+
+// Bootstrap Styles
+// Styles which you want users to be able to select in the CMS
+// ----------------------------------------------------------------------------
+
+.lead {
+  // For the style to register, it needs some kind of definition.
+  // Just apply the default display value
+  display: block;
+}
+
+* {
+  word-wrap: break-word;
+}
+
+h1 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+h2 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+h3 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+h4 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+h5 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+h6 {
+  // font-size: ;
+  // line-height: ;
+  @media (min-width: $screen-sm-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-md-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+  @media (min-width: $screen-lg-min) {
+    // font-size: ;
+    // line-height: ;
+  }
+}
+
+ol {
+
+}
+
+ul:not(.nav) {
+  li:not(.link, .current) {
+
+  }
+}
+
+p {
+
+}
+
+a {
+  transition: all ease 500ms;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
+}
+
+hr {
+
+}
+
+blockquote {
+
+}
+
+// Custom Styles
+//
+// Styles which will appear in the Styles dropdown in the CMS
+// ----------------------------------------------------------------------------
+
+.no-break {
+  white-space: nowrap;
+}
