@@ -1,138 +1,48 @@
-var _               =   require('lodash'),
-    path            =   require('path'),
-    del             =   require('del'),
-    sync            =   require('browser-sync'),
-    gulp            =   require('gulp-cli'),
-    sass            =   require('gulp-sass'),
-    sourcemaps      =   require('gulp-sourcemaps'),
-    autoprefixer    =   require('autoprefixer'),
-    minify          =   require('gulp-minify-css'),
-    uglify          =   require('gulp-uglify'),
-    include         =   require('gulp-include'),
-    concat          =   require('gulp-concat'),
-    imagemin        =   require('gulp-imagemin'),
-    watch           =   require('gulp-watch'),
-    bower           =   require('gulp-bower'),
-    svgtopng        =   require('gulp-svg2png');
+var _     = require('lodash'),
+    path  = require('path'),
+    sync  = require('browser-sync'),
+    gulp  = require('gulp'),
+    watch = require('gulp-watch');
 
+var config = require('./gulp/config');
 
-
-var config = {
-    // Source Config
-    src_images          :    './src/images/',                       // Source Images Directory
-    src_javascripts     :    './src/javascript/',                   // Source Javascripts Directory
-    src_stylesheets     :    './src/sass/',                         // Source Styles Sheets Directory
-    // Vendors
-    vend_main_css       :    'vendor.css',
-    vend_main_js        :    'vendor.js',
-    // Destination Config
-    dist_fonts          :    './fonts/',                            // Destination Fonts Directory
-    dist_images         :    './images/',                           // Destination Images Directory
-    dist_javascripts    :    './javascript/',                       // Destination Javascripts Directory
-    dist_stylesheets    :    './css/',                              // Destination Styles Sheets Directory
-    // Bower Config
-    bower               :    './bower_components/',                 // Bower Components
-    // Auto Prefixer
-    autoprefix          :    'last 3 version',                      // Number of version Auto Prefixer to use
-    // Server
-    host                :    'localhost',                           // Webserverhost
-    port                :    8888                                   // Webserver port
-};
-
-var files = {
-    src_fonts       : [
-        './src/fonts/**/*',
-        config.bower + '/font-awesome/fonts/**/*',
-        config.bower + '/open-iconic/font/fonts/**/*',
-        config.bower + '/bootstrap-sass-official/assets/fonts/bootstrap/**/*'
-    ],
-    vend_stylesheets: [
-        config.bower + '/font-awesome/css/font-awesome.css'
-    ],
-    vend_javascripts: [
-        config.bower + '/jquery/dist/jquery.js',
-        config.bower + '/bootstrap-sass-official/assets/javascripts/bootstrap.js',
-        config.bower + '/gmaps/gmaps.js'
-    ]
-};
-
-// Bower
-gulp.task('bower', function() {
-    return bower()
-        .pipe(gulp.dest(config.bower)); // Possibly rework this to install to './src/bower/' would need to update sass includePaths and add '.bowerrc' for gulp-bower
-});
-
-// Vendor Styles
-
-gulp.task('vendor-styles', function () {
-    return gulp.src(files.vend_stylesheets)
-        .pipe(concat(config.vend_main_css))
-        .pipe(minify())
-        .pipe(gulp.dest(config.dist_stylesheets))
-});
-
-// Styles
-gulp.task('styles', function () {
-    return gulp.src(path.join(config.src_stylesheets, '/**/*.scss'))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle: 'expanded',
-            precision: 10,
-            includePaths: [config.bower],
-            errLogToConsole: true
-        }).on('error', sass.logError))
-        .pipe(autoprefixer(config.autoprefix))
-        .pipe(minify({rebase: false}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(config.dist_stylesheets))
-        .pipe(sync.reload({stream:true}))
-});
-
-// Vendor Scripts
-
-gulp.task('vendor-scripts', function () {
-    return gulp.src(files.vend_javascripts)
-        .pipe(concat(config.vend_main_js))
-        .pipe(uglify())
-        .pipe(gulp.dest(config.dist_javascripts))
-});
-
-// Scripts
-gulp.task('scripts', function () {
-    return gulp.src(path.join(config.src_javascripts, '/[^_]*.js'))
-        .pipe(include())
-        .pipe(uglify())
-        .pipe(gulp.dest(config.dist_javascripts))
-        .pipe(sync.reload({stream:true}))
-});
-
-// Image Optimization
-gulp.task('images', function() { // Always call 'svgtopng' before executing
-    return gulp.src(path.join(config.src_images, '/**/*'))
-        .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
-        .pipe(gulp.dest(config.dist_images))
-});
-
-// Fonts
-gulp.task('fonts', function () {
-    return gulp.src(files.src_fonts)
-        .pipe(gulp.dest(config.dist_fonts));
-});
-
-// Clean
-gulp.task('clean', function() {
-    del([config.dist_fonts, config.dist_images, config.dist_javascripts, config.dist_stylesheets])
-});
-
-// Watch
-gulp.task('watch', function() {
-    sync({
-        proxy: config.host + ':' + config.port
-    });
-    gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), ['styles']);
-    gulp.watch(path.join(config.src_javascripts, '/**/*.js'), ['scripts']);
-});
+gulp.task('bower', require('./gulp/tasks/bower'));
+gulp.task('clean', require('./gulp/tasks/clean'));
+gulp.task('vendor-styles', require('./gulp/tasks/vendor_styles'));
+gulp.task('styles', require('./gulp/tasks/styles'));
+gulp.task('vendor-scripts', require('./gulp/tasks/vendor_scripts'));
+gulp.task('scripts', require('./gulp/tasks/scripts'));
+gulp.task('images', require('./gulp/tasks/images'));
+gulp.task('fonts', require('./gulp/tasks/fonts'));
 
 // Need a copy task for light gallery fonts
 
-// No Tasks!!!
+gulp.task('watch', function () {
+    sync({
+        proxy: config.host + ':' + config.port,
+        open:  false,
+        port:  4000
+    });
+    gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), gulp.series('styles'));
+    gulp.watch(path.join(config.src_javascripts, '/**/*.js'), gulp.series('scripts'));
+});
+
+
+gulp.task('build', function () {
+    config.environment = 'prod';
+    return gulp.series(
+        'bower',
+        'clean',
+        gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'scripts', 'images', 'fonts')
+    )
+});
+
+gulp.task('default', function () {
+    config.environment = 'dev';
+    gulp.series(
+        'bower',
+        'clean',
+        gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'scripts', 'images', 'fonts'),
+        'watch'
+    )
+});

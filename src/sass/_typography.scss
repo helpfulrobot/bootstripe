@@ -4,18 +4,6 @@
 // Defines additional styles which can be applied in the CMS
 // ============================================================================
 
-// ATTENTION: Button styles are now in 'editor.scss' due to the unfortunate repercussions of using @extend
-
-// Bootstrap Styles
-// Styles which you want users to be able to select in the CMS
-// ----------------------------------------------------------------------------
-
-.lead {
-  // For the style to register, it needs some kind of definition.
-  // Just apply the default display value
-  display: block;
-}
-
 * {
   word-wrap: break-word;
 }
