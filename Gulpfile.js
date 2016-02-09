@@ -1,12 +1,11 @@
 var _               =   require('lodash'),
     path            =   require('path'),
     del             =   require('del'),
-    run             =   require('run-sequence'),
     sync            =   require('browser-sync'),
-    gulp            =   require('gulp'),
+    gulp            =   require('gulp-cli'),
     sass            =   require('gulp-sass'),
     sourcemaps      =   require('gulp-sourcemaps'),
-    autoprefixer    =   require('gulp-autoprefixer'),
+    autoprefixer    =   require('autoprefixer'),
     minify          =   require('gulp-minify-css'),
     uglify          =   require('gulp-uglify'),
     include         =   require('gulp-include'),
@@ -107,15 +106,8 @@ gulp.task('scripts', function () {
         .pipe(sync.reload({stream:true}))
 });
 
-// SVG to PNG
-gulp.task('svgtopng', function () {
-    gulp.src(path.join(config.src_images, '/**/*.svg'))
-        .pipe(svgtopng())
-        .pipe(gulp.dest(config.src_images));
-});
-
 // Image Optimization
-gulp.task('images', ['svgtopng'], function() { // Always call 'svgtopng' before executing
+gulp.task('images', function() { // Always call 'svgtopng' before executing
     return gulp.src(path.join(config.src_images, '/**/*'))
         .pipe(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true }))
         .pipe(gulp.dest(config.dist_images))
@@ -141,12 +133,6 @@ gulp.task('watch', function() {
     gulp.watch(path.join(config.src_javascripts, '/**/*.js'), ['scripts']);
 });
 
-// Prep
-gulp.task('build', function (cb) {
-    run('clean', 'bower', 'vendor-scripts', 'vendor-styles', 'styles', 'scripts', 'fonts', 'images', cb);
-});
+// Need a copy task for light gallery fonts
 
-// Default
-gulp.task('default', function(cb) {
-    run('build', ['watch'], cb);
-});
+// No Tasks!!!

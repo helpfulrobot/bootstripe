@@ -10,41 +10,11 @@
 
 // Site variables and mixins
 @import 'variables';
-@import 'mixins';
 
-// Custom Bootstrap
-@import 'bootstrap';
-
-// Core CSS
-@import 'scaffolding';
-@import 'forms';
-@import 'buttons';
 @import 'typography';
 
-// Components
-@import 'jumbotron';
-@import 'navbar';
-@import 'hamburger';
-@import 'map_interaction';
 @import 'responsive_helper';
-
-// Includes
-@import 'header';
-@import 'footer';
-@import 'search';
-
-// SilverStripe - Bootstrap conversions
-@import 'silverstripe_nav';
-@import 'silverstripe_forms';
-@import 'silverstripe_images';
 
 // Overrides
 @import 'overrides';
 
-// Utilities
-@import "utilities";
-
-// Layouts
-@import 'inner';
-@import 'homepage';
-@import 'blog';
